@@ -1,0 +1,126 @@
+<!DOCTYPE html>  
+ <html lang="en">  
+ <head>  
+   <meta charset="UTF-8">  
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+   <title>Multi-Step Form</title>  
+   <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+  <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<!-- JS & CSS library of MultiSelect plugin -->
+<script src="https://phpcoder.tech/multiselect/js/jquery.multiselect.js"></script>
+<link rel="stylesheet" href="https://phpcoder.tech/multiselect/css/jquery.multiselect.css">
+</head>  
+ <body>  
+
+    <!-- multistep form -->
+    <form id="msform">
+      <!-- progressbar -->
+      <ul id="progressbar">
+        <li class="bar0 active">Select</li>
+        <li class="bar1">Add Filters</li>
+        <li class="bar2">Download</li>
+      </ul>
+      <!-- fieldsets -->
+      <fieldset class="stage0">
+  
+        <h2 class="fs-title">Select Stationary Devices</h2>
+        <select name="sensordeviceSelect[]" multiple id="sensordeviceSelect">
+          <option value="s1">S1</option>
+          <option value="s2">S2</option>
+          <option value="s3">S3</option>
+          <option value="s4">S4</option>
+          <option value="s5">S5</option>
+          <option value="s6">S6</option>
+          <option value="s7">S7</option>
+          <option value="s8">S8</option>
+          <option value="s9">S9</option>
+          <option value="s10">S10</option>
+          <option value="s11">S11</option>
+          <option value="s12">S12</option>
+          <option value="s13">S13</option>
+          <option value="s14">S14</option>
+          <option value="s15">S15</option>
+          <option value="s16">S16</option>
+          <option value="s17">S17</option>
+          <option value="s18">S18</option>  
+      </select>
+</br>
+<h2 class="fs-title">Select Mobile Devices</h2>
+<select name="mobiledeviceSelect[]" id="mobiledeviceSelect" multiple>  
+  <option value="m1a">M1(A)</option>
+  <option value="m2a">M2(A)</option>        
+  <option value="m3a">M3(A)</option> 
+  <option value="m4a">M4(A)</option> 
+  <option value="m5a">M5(A)</option> 
+  <option value="m6a">M6(A)</option> 
+  <option value="m7a">M7(A)</option> 
+  <option value="m1s">M1(S)</option> 
+  <option value="m2s">M2(S)</option> 
+  <option value="m3s">M3(S)</option> 
+  <option value="m4s">M4(S)</option> 
+  <option value="m5s">M5(S)</option> 
+  <option value="m6s">M6(S)</option> 
+  <option value="m7s  ">M7(S)</option> 
+</select>
+
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </fieldset>
+      <fieldset class="stage1">
+        <input type="button" name="data" class="data" value="Data Validator"/>
+        <div class="time">
+        <h2 class="fs-header-time">Select Time Period</h2>
+        <div class="from"><p>From:</p><input type="datetime-local"/></div>
+        <div class="to"><p>To:</p><input type="datetime-local" /></div>
+        </div>
+
+        <div class="alldata">
+        <div class="sensor">
+        <h2 class="fs-header">Sensor Data</h2>
+        <select name="sensordataSelect[]" multiple id="sensordataSelect">
+          <option value="temp">Temprature</option>
+          <option value="humidity">Humidity</option>
+          <option value="p1">P 1.0</option>
+          <option value="p2.5">P 2.5</option>
+          <option value="p10">P 10</option>
+          </select>
+          </div>
+        </br>
+         
+        <div class="acc">
+        <h2 class="fs-header">Accelerometer Data</h2>
+      
+          <select name="accdataSelect[]" multiple id="accdataSelect">
+            <option value="accx">ACCx</option>
+            <option value="accy">ACCy</option>
+            <option value="accz">ACCz</option>
+            <option value="gccx">GCCx</option>
+            <option value="gccy">GCCy</option>
+            <option value="gccz">GCCz</option>
+          </select>
+        </div>
+        </div>
+        <input type="button" name="previous" class="previous action-button" value="Previous" />
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </fieldset>
+      <fieldset class="stage2">
+        <h2 class="fs-title">Download File</h2>
+      </br>
+    </br>
+  </br>
+</br>
+        <input type="submit" name="csv" class="csv" value="Download as .CSV file" />
+        <input type="submit" name="json" class="json" value="Download as .JSON file " />
+      </br>
+    </br>
+        <input type="button" name="previous" class="previous action-button" value="Previous" />
+        <!-- <input type="submit" name="submit" class="submit action-button" value="Submit" /> -->
+      </fieldset>
+    </form>
+    
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+ </body>  
+ </html>  

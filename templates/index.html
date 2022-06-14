@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="card-wrapper">
+    <div class="card">
+  
+      <h1 class="center">Log In</h1>
+
+            <form action="{{ url_for('login') }}">
+               <label for="email"></label>
+        <input type="email" name="email" placeholder="Enter your Email" class="field" required>
+  
+        <label for="password"></label>
+        <input type="password" name="password" placeholder="Enter your Password" class="field" required>
+  
+        <p class="error error--hidden"></p>
+  
+        <input type="submit" value="Log In" class="btn">
+  
+      </form>
+  
+    </div>
+  
+  
+  </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="card-wrapper">
+    <div class="card">
+        <h1 class="center">OTP VERIFY</h1>
+        <form action="/validate" method="post">
+            <h5 class="center">One time password has been sent. Please check your mail</h5>
+            <label for="otp"></label>
+            <input type="otp" name="otp" placeholder="Enter your OTP" class="field" required>
+            {{ recaptcha }} <br/>
+            <input type="submit" value="Verify" class="btn">
+        </form>
+    </div>
+</div>
+{% endblock %}
