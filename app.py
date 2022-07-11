@@ -30,7 +30,7 @@ limiter = Limiter(
 )
 
 # initialising Database
-db = Database('mongodb://mumbai11:study77%23@3.7.66.36:27017/?authMechanism=DEFAULT&authSource=admin')
+db = Database('mongodb URL')
 
 
 # Recaptcha Verification
@@ -53,7 +53,7 @@ mail = Mail(app)
 app.config["MAIL_SERVER"] = 'smtp.gmail.com'
 app.config["MAIL_PORT"] = 465
 app.config["MAIL_USERNAME"] = 'sagartiwari.bmp@gmail.com'   
-app.config['MAIL_PASSWORD'] = 'eznplbvuokcpqucw'                #App password
+app.config['MAIL_PASSWORD'] = '#####'                #App password
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
